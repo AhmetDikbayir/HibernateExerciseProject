@@ -34,6 +34,16 @@
              validate: tablolari validate yapıyor. eksiklik varsa hata olusturur
 
          -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+        <!-- ikinci seviye önbelleğin kullanılacağı entity sınıflarını belirtme -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+
+        <!-- ikinci seviye önbellek için query sonuçlarının da önbelleğe alınmasını belirtme -->
+        <property name="hibernate.cache.use_query_cache">true</property>
+
+        <!-- optional: önbelleklemeyi ne kadar süreyle kullanacağını belirtme -->
+        <property name="hibernate.cache.default_cache_concurrency_strategy">read-write</property>
 
         <property name="hbm2ddl.auto">update</property>
 
